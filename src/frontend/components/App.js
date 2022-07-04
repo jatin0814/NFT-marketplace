@@ -25,10 +25,17 @@ function App() {
   const [marketplace, setMarketplace] = useState({})
   // MetaMask Login/Connect
   const web3Handler = async () => {
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-    setAccount(accounts[0])
     // Get provider from Metamask
     const provider = new ethers.providers.Web3Provider(window.ethereum)
+    const network = await provider.getNetwork();
+    console.log("chainId",network.chainId);
+    if(network.chainId != 5){
+      alert("Please Switch your network to Goerli Test Network");
+      return;
+    }
+
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    setAccount(accounts[0])
     // Set signer
     const signer = provider.getSigner()
 

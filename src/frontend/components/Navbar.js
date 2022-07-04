@@ -6,7 +6,7 @@ import market from './market.png'
 
 const Navigation = ({ web3Handler, account }) => {
     return (
-        <Navbar expand="lg" bg="secondary" variant="light">
+        <Navbar expand="lg" bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand>
                     {/* <img src={market} width="40" height="40" className="" alt="" /> */}

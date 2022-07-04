@@ -54,8 +54,31 @@
           "type": "address"
         }
       ],
-      "name": "Bought",
+      "name": "bought",
       "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IERC721",
+          "name": "_nft",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "name": "makeItem",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
       "anonymous": false,
@@ -91,8 +114,21 @@
           "type": "address"
         }
       ],
-      "name": "Offered",
+      "name": "offered",
       "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "itemId",
+          "type": "uint256"
+        }
+      ],
+      "name": "purchaseItem",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
     },
     {
       "inputs": [],
@@ -124,7 +160,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_itemId",
+          "name": "itemId",
           "type": "uint256"
         }
       ],
@@ -141,7 +177,7 @@
     },
     {
       "inputs": [],
-      "name": "itemCount",
+      "name": "itemcount",
       "outputs": [
         {
           "internalType": "uint256",
@@ -168,14 +204,14 @@
           "type": "uint256"
         },
         {
-          "internalType": "contract IERC721",
-          "name": "nft",
-          "type": "address"
-        },
-        {
           "internalType": "uint256",
           "name": "tokenId",
           "type": "uint256"
+        },
+        {
+          "internalType": "contract IERC721",
+          "name": "nft",
+          "type": "address"
         },
         {
           "internalType": "uint256",
@@ -183,53 +219,17 @@
           "type": "uint256"
         },
         {
-          "internalType": "address payable",
-          "name": "seller",
-          "type": "address"
-        },
-        {
           "internalType": "bool",
           "name": "sold",
           "type": "bool"
+        },
+        {
+          "internalType": "address payable",
+          "name": "seller",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "contract IERC721",
-          "name": "_nft",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_tokenId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_price",
-          "type": "uint256"
-        }
-      ],
-      "name": "makeItem",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_itemId",
-          "type": "uint256"
-        }
-      ],
-      "name": "purchaseItem",
-      "outputs": [],
-      "stateMutability": "payable",
       "type": "function"
     }
   ],
